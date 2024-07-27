@@ -1,0 +1,31 @@
+@startuml
+actor Customer
+participant "Личный кабинет" as PersonalCabinet
+participant "Система возвратов" as ReturnsSystem
+participant "Курьер Ozon" as OzonCourier
+participant "Продавец" as Seller
+
+Customer -> PersonalCabinet: Перейти в раздел "Заказы"
+PersonalCabinet -> PersonalCabinet: Выбрать заказ
+PersonalCabinet -> ReturnsSystem: Нажать "Вернуть товары"
+ReturnsSystem -> Customer: Выбрать товары для возврата
+ReturnsSystem -> Customer: Выбрать причину возврата
+Customer -> ReturnsSystem: Ввести комментарий и загрузить фото
+ReturnsSystem -> Customer: Выбрать способ возврата
+Customer -> ReturnsSystem: Нажать "Оформить возврат"
+
+ReturnsSystem -> OzonCourier: Инструкция по возврату
+OzonCourier -> Customer: Запланировать возврат (если доставлено Ozon)
+
+ReturnsSystem -> Seller: Инструкция по возврату (если доставлено продавцом)
+Seller -> Customer: Следовать инструкции по возврату (если доставлено продавцом)
+
+ReturnsSystem -> Customer: Статус заявки в "Мои возвраты"
+Customer -> ReturnsSystem: Подготовить товар для возврата
+ReturnsSystem -> Customer: Упаковать товар
+
+Customer -> OzonCourier: Передать товар (если доставлено Ozon)
+Customer -> Seller: Отправить товар (если доставлено продавцом)
+
+ReturnsSystem -> Customer: Возврат средств (после получения товара)
+@enduml
