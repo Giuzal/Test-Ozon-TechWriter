@@ -1,8 +1,9 @@
 # Test-Ozon-TechWriter
 This is a test task for technical writer vacancy
 
-1. Первое задание: style.md
-2. Второе задание: return_scheme.puml или return_scheme.png
-3. Третье задание: feedback.txt
+Первое задание: [style.md](style.md)
+Второе задание: [return_scheme.puml](return_scheme.puml) или [return_scheme.png](return_scheme.png)
+Третье задание: [feedback.md](feedback.md)
+
 
 
